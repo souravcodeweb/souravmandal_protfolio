@@ -1,0 +1,689 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --bg-color: #ffffff;
+    --text-color: #000;
+    --box-color: 0px 0px 14px 2px rgba(0,0,0,0.30);
+    --main-color: #008000;
+}
+.drak-theme{
+    --bg-color: #000;
+    --text-color: #fff;
+    --box-color: 0px 0px 14px 2px rgba(238, 226, 226, 0.925);
+    transition: all 0.3s ease-in-out;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Jost', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+section{
+    padding: 150px 12%;
+}
+
+
+
+/* thuis is navbar css code */
+
+.navbr{
+    background-color: var(--bg-color);
+    /* background-color: green; */
+    display: flow-root;
+    padding: 0 18%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#check{
+    display: none;
+}
+.logo{
+    display: table;
+    float: left;
+    vertical-align: middle;
+    padding: 0;
+    color: #000;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 180px;
+    height: 68px;
+    position: relative;
+    z-index: 9;
+    transition: all 0.5s;
+
+}
+.logo::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    z-index: -1;
+    right: -50px;
+    width: 80%;
+    transform: skew(30deg);
+    background-color: var(--main-color);
+}
+.logo::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    height: 100%;
+    right: 10%;
+    width: 2000px;
+    background-color: var(--main-color);
+}
+.logo a{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 70px;
+    font-family: 'Dancing Script', cursive;
+}
+ul{
+    float: right;
+}
+ul li{
+    display: inline-block;
+    line-height: 70px;
+    border-radius: 14px;
+}
+ul li a{
+    padding: 15px ;
+    font-size: 18px;
+    color: var(--text-color);
+}
+ul li a:hover{
+    color: var(--main-color);
+}
+#icon{
+    cursor: pointer;
+}
+
+@media (max-width: 1250px){
+    .navbr{
+        padding: 0 2%;
+    }
+    ul li a{
+        padding: 15px 20px;
+    }
+    .checkbtn{
+        float: right;
+        width: 20px;
+        height: 18px;
+        position: relative;
+        transform: rotate(0);
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        top: 25px;
+        color: var(--text-color);
+        display: none;
+    }
+    .checkbtn span{
+        background-color: var(--text-color);
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        border-radius: 1px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0);
+        transition: 0.25s ease-in-out;
+    }
+    .checkbtn span:nth-child(1){
+        top: 0;
+    }
+    .checkbtn span:nth-child(2){
+        top: 7px;
+    }
+    .checkbtn span:nth-child(3){
+        top: 14px;
+    }
+    @media (max-width: 900px){
+        .navbar{
+            padding: 0 10%;
+        }
+        .checkbtn{
+            display: block;
+            margin-right: 40px;
+        }
+        nav ul{
+            position: fixed;
+            width: 350px;
+            height: 100vh;
+            background-color: var(--bg-color);
+            top: 68px;
+            left: -100%;
+            text-align: center;
+            transition: all 0.5s;
+            color: var(--text-color);
+        }
+        nav ul li{
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+        #check:checked ~ ul{
+            left: 0;
+        }
+    }
+    }
+
+.navbr.sticky{
+    background: var(--bg-color);
+    box-shadow: var(--box-color);
+}
+
+
+/* this is home page html code  */
+
+
+.home{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.home .text{
+    width: 350px;
+}
+.home .text h1{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+.home .text h2{
+    font-size: 35px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+.home .text p{
+    font-size: 18px;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.socil-links a{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--main-color);
+    font-size: 18px;
+    color: var(--text-color);
+    margin-right: 15px;
+    margin-bottom: 30px;
+    transition: ease .3s;
+}
+.socil-links a:hover{
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+.btn a{
+    padding: 10px 40px;
+    border-radius: 30px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+.btn a:hover{
+    border: 2px solid var(--main-color);
+    color: var(--bg-color);
+    background-color: var(--text-color);
+}
+.home .img img{
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+    border-radius: 50%;
+}
+
+
+/* this is about page css */
+
+#about{
+    padding: 90px 25%;
+}
+
+@media (max-width: 414px){
+    #about{
+        padding: 10px 8%;
+    }
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about .heading h1{
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+.about .heading span{
+    color: var(--main-color);
+}
+.about .heading h1::after{
+    content: "";
+    position: absolute;
+    width: 10vw;
+    border-bottom: 3px solid var(--main-color);
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-50%);
+}
+.about .heading p{
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.about .text{
+    text-align: justify;
+    margin-top: 30px;
+    /* width: 700px; */
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.about .text p{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.work_expre h1{
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.work_expre h1 span{
+    color: var(--text-color);
+}
+.about .img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about .img img{
+    margin: 20px;
+    cursor: pointer;
+}
+
+/* this is skill page css  */
+#skill{
+    padding: 40px 8%;
+}
+#skill .heading h1{
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+}
+#skill .heading span{
+    color: var(--text-color);
+}
+#skill .heading h1::after{
+    content: "";
+    position: absolute;
+    width: 8vw;
+    border-bottom: 3px solid var(--main-color);
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-50%);
+    margin-bottom: -10px;
+}
+#skill .heading p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.skill{
+    margin-bottom: 30px;
+}
+.skill-box{
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.skill-box .img{
+    width: 90px;
+    height: 90px;
+    background-color: var(--bg-color);
+    /* background-color: #3498db; */
+    box-shadow: var(--box-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.skill-box .img img{
+    width: 60px;
+    height: 60px;    
+    transition: all 0.3s;
+}
+.skill-box .img img:hover{
+    width: 80px;
+    height: 80px;
+}
+.skill-box h1{
+    margin-bottom: 20px;
+    color: var(--main-color);
+    font-size: 20px;
+}
+.skill-box p{
+    text-align: center;
+}
+.skill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/* this is blog css  */
+
+#blog{
+    padding: 40px 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blog-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.blog-heading span{
+    color: var(--main-color);
+}
+.blog-heading h3{
+    font-size: 2.4rem;
+    color: var(--text-color);
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.blog-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+.blog-box{
+    width: 300px;
+    background-color: var(--bg-color);
+    box-shadow: var(--box-color);
+    margin: 20px;
+}
+.blog-img{
+    width: 100%;
+    height: auto;
+}
+.blog-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.blog-text{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.blog-text span{
+    color: var(--main-color);
+    font-size: 0.9rem;
+    font-family: sans-serif;
+}
+.blog-text .blog-title{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.blog-text .blog-title:hover{
+    color: var(--main-color);
+}
+.blog-text p{
+    color: var(--text-color);
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0px;
+}
+.blog-link{
+    display: flex;
+    align-items: center;
+}
+.blog-link a{
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+.blog-link a:hover{
+    color: var(--main-color);
+}
+
+
+/* this is work section css  */
+
+
+#work{
+    padding: 40px 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.work-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.work-heading span{
+    color: var(--main-color);
+}
+.work-heading h3{
+    font-size: 2.4rem;
+    color: var(--text-color);
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.work-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+.work-box {
+    width: 350px;
+    background-color: var(--bg-color);
+    box-shadow: var(--box-color);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.work-img{
+    width: 100%;
+    height: auto;
+}
+.work-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.work-text{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.work-text span{
+    font-family: sans-serif;
+    font-weight: 500;
+    color: var(--main-color);
+    margin-bottom: 5px;
+}
+.work-text h1{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.work-link{
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #3498db;
+}
+.work-link a{
+    font-size: 1rem;
+    color: var(--bg-color);
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* this is contact from html code  */
+
+#contact{
+    padding: 40px 18%;
+}
+.contact-form h1{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+.contact-form span{
+    color: var(--main-color);
+}
+.contact-form p{
+    font-size: 15px;
+    text-align: center;
+}
+.contact-form{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 5%;
+}
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+input,textarea,label{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+input,textarea{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid var(--main-color);
+    outline: none;
+    margin:10px 0;
+}
+
+form button{
+    padding: 8px 40px;
+    border-radius: 30px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s;
+    margin: 20px 0;
+    cursor: pointer;
+    font-size: 18px;
+}
+form button:hover{
+    border: 2px solid var(--main-color);
+    color: var(--bg-color);
+    background-color: var(--main-color);
+}
+
+
+/* this is footerc section css code  */
+
+#footer{
+    padding: 0 0;
+}
+
+footer{
+    background-color: var(--text-color);
+    height: auto;
+    padding-top: 20px;
+    color: var(--bg-color);
+}
+.footer-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+    color: var(--main-color);
+}
+.footer-content ul li i{
+    color: var(--bg-color);
+}
+.footer-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

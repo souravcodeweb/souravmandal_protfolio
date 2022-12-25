@@ -1,0 +1,11 @@
+.contener-from{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.item-text{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+}
